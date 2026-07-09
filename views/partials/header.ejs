@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Ashraf Vantiya — Computer Engineering student, Full-Stack Developer, Android Developer and IoT enthusiast."
+  >
+
+  <title><%= title %></title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/style.css"
+  >
+
+  <script
+    src="/js/main.js"
+    defer
+  ></script>
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <nav class="navbar">
+
+    <!-- Logo -->
+
+    <a
+      href="/"
+      class="logo"
+      aria-label="Ashraf Vantiya home"
+    >
+      AV<span>.</span>
+    </a>
+
+
+    <!-- Mobile menu button -->
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navigationMenu"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+
+    <!-- Navigation -->
+
+    <div
+      class="navigation-menu"
+      id="navigationMenu"
+    >
+
+      <a
+        href="/"
+        class="<%= currentPage === 'home'
+          ? 'active'
+          : '' %>"
+      >
+        Home
+      </a>
+
+
+      <a
+        href="/about"
+        class="<%= currentPage === 'about'
+          ? 'active'
+          : '' %>"
+      >
+        About
+      </a>
+
+
+      <a
+        href="/education"
+        class="<%= currentPage === 'education'
+          ? 'active'
+          : '' %>"
+      >
+        Education
+      </a>
+
+
+      <a
+        href="/experience"
+        class="<%= currentPage === 'experience'
+          ? 'active'
+          : '' %>"
+      >
+        Experience
+      </a>
+
+
+      <a
+        href="/projects"
+        class="<%= currentPage === 'projects'
+          ? 'active'
+          : '' %>"
+      >
+        Projects
+      </a>
+
+
+      <a
+        href="/skills"
+        class="<%= currentPage === 'skills'
+          ? 'active'
+          : '' %>"
+      >
+        Skills
+      </a>
+
+
+      <a
+        href="/certificates"
+        class="<%= currentPage === 'certificates'
+          ? 'active'
+          : '' %>"
+      >
+        Certificates
+      </a>
+
+
+      <a
+        href="/contact"
+        class="nav-contact
+        <%= currentPage === 'contact'
+          ? 'active'
+          : '' %>"
+      >
+        Contact
+      </a>
+
+    </div>
+
+  </nav>
+
+</header>
