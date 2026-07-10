@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ashraf-portfolio-05ov.onrender.com/sitemap.xml
