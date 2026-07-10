@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 const helmet = require("helmet");
 const compression = require("compression");
+app.use(express.static("public"));
 
 dotenv.config();
 
