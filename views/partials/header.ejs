@@ -1,53 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Ashraf Vantiya — Computer Engineering student, Full-Stack Developer, Android Developer and IoT enthusiast."
+  >
 
-<title><%= title %> | Ashraf Vantiya</title>
+  <title><%= title %></title>
 
-<link rel="stylesheet" href="/css/style.css">
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-<script src="/js/main.js" defer></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
+  <link
+    rel="stylesheet"
+    href="/css/style.css"
+  >
+
+  <script
+    src="/js/main.js"
+    defer
+  ></script>
 </head>
 
 <body>
 
-<header class="navbar">
+<header class="site-header">
 
-<div class="nav-container">
+  <nav class="navbar">
 
-<a href="/" class="logo">
-AV<span>.</span>
-</a>
+    <!-- Logo -->
 
-<nav>
+    <a
+      href="/"
+      class="logo"
+      aria-label="Ashraf Vantiya home"
+    >
+      AV<span>.</span>
+    </a>
 
-<ul class="nav-links">
 
-<li><a href="/">Home</a></li>
+    <!-- Mobile menu button -->
 
-<li><a href="/about">About</a></li>
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navigationMenu"
+    >
 
-<li><a href="/experience">Experience</a></li>
+      <span></span>
+      <span></span>
+      <span></span>
 
-<li><a href="/projects">Projects</a></li>
+    </button>
 
-<li><a href="/skills">Skills</a></li>
 
-<li><a href="/contact">Contact</a></li>
+    <!-- Navigation -->
 
-</ul>
+    <div
+      class="navigation-menu"
+      id="navigationMenu"
+    >
 
-</nav>
+      <a
+        href="/"
+        class="<%= currentPage === 'home'
+          ? 'active'
+          : '' %>"
+      >
+        Home
+      </a>
 
-</div>
+
+      <a
+        href="/about"
+        class="<%= currentPage === 'about'
+          ? 'active'
+          : '' %>"
+      >
+        About
+      </a>
+
+
+      <a
+        href="/education"
+        class="<%= currentPage === 'education'
+          ? 'active'
+          : '' %>"
+      >
+        Education
+      </a>
+
+
+      <a
+        href="/experience"
+        class="<%= currentPage === 'experience'
+          ? 'active'
+          : '' %>"
+      >
+        Experience
+      </a>
+
+
+      <a
+        href="/projects"
+        class="<%= currentPage === 'projects'
+          ? 'active'
+          : '' %>"
+      >
+        Projects
+      </a>
+
+
+      <a
+        href="/skills"
+        class="<%= currentPage === 'skills'
+          ? 'active'
+          : '' %>"
+      >
+        Skills
+      </a>
+
+
+      <a
+        href="/certificates"
+        class="<%= currentPage === 'certificates'
+          ? 'active'
+          : '' %>"
+      >
+        Certificates
+      </a>
+
+
+      <a
+        href="/contact"
+        class="nav-contact
+        <%= currentPage === 'contact'
+          ? 'active'
+          : '' %>"
+      >
+        Contact
+      </a>
+
+    </div>
+
+  </nav>
 
 </header>
