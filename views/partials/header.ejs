@@ -15,12 +15,81 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <title><%= title %> | Ashraf Vantiya</title>
+
   <meta
     name="description"
-    content="Ashraf Vantiya — Computer Engineering student, Full-Stack Developer, Android Developer and IoT enthusiast."
+    content="Ashraf Vantiya Portfolio - Computer Engineering Student, Full Stack MERN Developer, Android Developer and IoT Enthusiast. Explore my projects, experience, skills and certifications."
   >
 
-  <title><%= title %></title>
+  <meta
+    name="keywords"
+    content="Ashraf Vantiya, Ashraf Portfolio, Full Stack Developer, MERN Stack Developer, Node.js, Express.js, MongoDB, JavaScript, Android Developer, Portfolio"
+  >
+
+  <meta
+    name="author"
+    content="Ashraf Vantiya"
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <link
+    rel="canonical"
+    href="https://ashraf-portfolio-05ov.onrender.com/"
+  >
+
+  <!-- Open Graph -->
+
+  <meta
+    property="og:title"
+    content="Ashraf Vantiya | Full Stack Developer"
+  >
+
+  <meta
+    property="og:description"
+    content="Computer Engineering Student | Full Stack MERN Developer | Android Developer | IoT Enthusiast"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://ashraf-portfolio-05ov.onrender.com/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://ashraf-portfolio-05ov.onrender.com/images/profile.png"
+  >
+
+  <!-- Twitter -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Ashraf Vantiya | Full Stack Developer"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Computer Engineering Student | Full Stack MERN Developer | Android Developer | IoT Enthusiast"
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://ashraf-portfolio-05ov.onrender.com/images/profile.png"
+  >
 
   <link
     rel="preconnect"
@@ -49,156 +118,3 @@
   ></script>
 
 </head>
-
-
-<body>
-
-
-<header class="site-header">
-
-  <nav class="navbar">
-
-
-    <!-- Logo -->
-
-    <a
-      href="/"
-      class="logo"
-      aria-label="Ashraf Vantiya home"
-    >
-
-      AV<span>.</span>
-
-    </a>
-
-
-    <!-- Mobile menu button -->
-
-    <button
-      class="menu-button"
-      id="menuButton"
-      type="button"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-      aria-controls="navigationMenu"
-    >
-
-      <span></span>
-
-      <span></span>
-
-      <span></span>
-
-    </button>
-
-
-    <!-- Navigation -->
-
-    <div
-      class="navigation-menu"
-      id="navigationMenu"
-    >
-
-
-      <a
-        href="/"
-        class="<%= currentPage === 'home'
-          ? 'active'
-          : '' %>"
-      >
-
-        Home
-
-      </a>
-
-
-      <a
-        href="/about"
-        class="<%= currentPage === 'about'
-          ? 'active'
-          : '' %>"
-      >
-
-        About
-
-      </a>
-
-
-      <a
-        href="/education"
-        class="<%= currentPage === 'education'
-          ? 'active'
-          : '' %>"
-      >
-
-        Education
-
-      </a>
-
-
-      <a
-        href="/experience"
-        class="<%= currentPage === 'experience'
-          ? 'active'
-          : '' %>"
-      >
-
-        Experience
-
-      </a>
-
-
-      <a
-        href="/projects"
-        class="<%= currentPage === 'projects'
-          ? 'active'
-          : '' %>"
-      >
-
-        Projects
-
-      </a>
-
-
-      <a
-        href="/skills"
-        class="<%= currentPage === 'skills'
-          ? 'active'
-          : '' %>"
-      >
-
-        Skills
-
-      </a>
-
-
-      <a
-        href="/certificates"
-        class="<%= currentPage === 'certificates'
-          ? 'active'
-          : '' %>"
-      >
-
-        Certificates
-
-      </a>
-
-
-      <a
-        href="/contact"
-        class="nav-contact
-        <%= currentPage === 'contact'
-          ? 'active'
-          : '' %>"
-      >
-
-        Contact
-
-      </a>
-
-
-    </div>
-
-  </nav>
-
-</header>

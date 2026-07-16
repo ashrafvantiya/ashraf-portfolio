@@ -4,85 +4,140 @@ const dotenv = require("dotenv");
 const path = require("path");
 const helmet = require("helmet");
 const compression = require("compression");
-app.use(express.static("public"));
 
 dotenv.config();
 
 const app = express();
 
-// Security and performance
+// =======================
+// Security
+// =======================
+
 app.use(
   helmet({
     contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
   })
 );
 
 app.use(compression());
 
-// Read form and JSON data
+// =======================
+// Body Parser
+// =======================
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Public files: CSS, JavaScript, images and resume
+// =======================
+// Static Files
+// =======================
+
 app.use(express.static(path.join(__dirname, "public")));
 
-// EJS setup
+// =======================
+// SEO Headers
+// =======================
+
+app.use((req, res, next) => {
+  res.setHeader("X-Robots-Tag", "index, follow");
+  res.locals.siteName = "Ashraf Vantiya";
+  res.locals.siteUrl =
+    "https://ashraf-portfolio-05ov.onrender.com";
+
+  next();
+});
+
+// =======================
+// View Engine
+// =======================
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+// =======================
 // Routes
+// =======================
+
 const pageRoutes = require("./routes/pageRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 
 app.use("/", pageRoutes);
 app.use("/contact", contactRoutes);
 
-// 404 page
+// =======================
+// 404 Page
+// =======================
+
 app.use((req, res) => {
   res.status(404).render("404", {
-    title: "Page Not Found",
+    title: "404 | Page Not Found",
     currentPage: "",
   });
 });
 
-// Server error handler
-app.use((error, req, res, next) => {
-  console.error("Server Error:", error);
+// =======================
+// Error Handler
+// =======================
+
+app.use((err, req, res, next) => {
+  console.error(err);
 
   res.status(500).send(
-    "Something went wrong. Please try again later."
+    "Internal Server Error"
   );
 });
 
-// Server port
-const PORT = process.env.PORT || 3000;
+// =======================
+// Port
+// =======================
 
-// Connect database and start server
+const PORT =
+  process.env.PORT || 3000;
+
+// =======================
+// Database + Server
+// =======================
+
 async function startServer() {
+
   try {
+
     if (!process.env.MONGODB_URI) {
+
       throw new Error(
-        "MONGODB_URI is missing from the .env file."
+        "MONGODB_URI is missing from .env"
       );
+
     }
 
-    await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect(
+      process.env.MONGODB_URI
+    );
 
-    console.log("MongoDB connected successfully");
+    console.log(
+      "✅ MongoDB Connected Successfully"
+    );
 
     app.listen(PORT, () => {
+
       console.log(
-        `Portfolio is running at http://localhost:${PORT}`
+        `🚀 Server running on http://localhost:${PORT}`
       );
+
     });
+
   } catch (error) {
+
     console.error(
       "Application could not start:",
       error.message
     );
 
     process.exit(1);
+
   }
+
 }
 
 startServer();
